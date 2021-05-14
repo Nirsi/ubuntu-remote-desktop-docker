@@ -9,7 +9,7 @@ RUN sudo dpkg --remove firefox google-chrome-stable && sudo apt-get -y autoremov
 
 #Updating and installing basic tools
 RUN sudo apt-get update -y && sudo apt-get upgrade -y
-RUN sudo apt-get install -y vim ssh git apt-transport-https software-properties-common build-essential wget curl zip unzip htop
+RUN sudo apt-get install -y vim ssh git apt-transport-https software-properties-common build-essential wget curl zip unzip htop ncdu
 
 #Adding Pale Moon browser (https://www.palemoon.org/)
 RUN echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser.list

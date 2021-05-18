@@ -1,11 +1,11 @@
 FROM dorowu/ubuntu-desktop-lxde-vnc:latest
 
-#Switching sources.list for complete 20.04 one.
+#Switching sources.list for clean 20.04 one.
 RUN sudo mv /etc/apt/sources.list /etc/apt/sources.list.old
 COPY sources.list /etc/apt/sources.list
 
 #Removing build-in browsers
-RUN sudo dpkg --remove firefox && sudo apt-get -y autoremove
+RUN sudo dpkg --remove google-chrome-stable && sudo apt-get -y autoremove
 
 #Updating and installing basic tools
 RUN sudo apt-get update -y && sudo apt-get upgrade -y

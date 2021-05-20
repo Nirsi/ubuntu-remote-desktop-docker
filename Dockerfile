@@ -9,7 +9,7 @@ RUN sudo dpkg --remove google-chrome-stable && sudo apt-get -y autoremove
 
 #Updating and installing basic tools
 RUN sudo apt-get update -y && sudo apt-get upgrade -y
-RUN sudo apt-get install -y vim ssh git apt-transport-https software-properties-common build-essential wget curl zip unzip htop ncdu
+RUN sudo apt-get install -y software-properties-common apt-transport-https build-essential unzip wget curl htop zip ncdu atop vim ssh git 
 
 #Install VSCode
 RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -

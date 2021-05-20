@@ -11,12 +11,16 @@ RUN sudo dpkg --remove google-chrome-stable && sudo apt-get -y autoremove
 RUN sudo apt-get update -y && sudo apt-get upgrade -y
 RUN sudo apt-get install -y vim ssh git apt-transport-https software-properties-common build-essential wget curl zip unzip htop ncdu
 
-#Installing VSCode
+#Install VSCode
 RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 RUN sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 RUN sudo apt-get update -y && sudo apt-get install -y code
 
-#Adding Pale Moon browser (https://www.palemoon.org/)
+#Install Pale Moon browser (https://www.palemoon.org/)
 RUN sudo echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser.list
 RUN sudo curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser/xUbuntu_20.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser.gpg > /dev/null
 RUN sudo apt-get update -y && sudo apt-get install -y palemoon
+
+#Install Alacritty
+RUN sudo add-apt-repository ppa:aslatter/ppa
+RUN sudo apt-get install -y alacritty

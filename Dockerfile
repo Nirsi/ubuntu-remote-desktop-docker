@@ -9,7 +9,7 @@ RUN sudo dpkg --remove google-chrome-stable && sudo apt-get -y autoremove
 
 #Updating and installing basic tools
 RUN sudo apt-get update -y && sudo apt-get upgrade -y
-RUN sudo apt-get install -y software-properties-common apt-transport-https build-essential unzip wget curl htop zip ncdu atop vim ssh git 
+RUN sudo apt-get install -y software-properties-common apt-transport-https build-essential gdebi-core unzip wget curl htop ncdu zip atop vim ssh git 
 
 #Install VSCode
 RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
@@ -24,3 +24,8 @@ RUN sudo apt-get update -y && sudo apt-get install -y palemoon
 #Install Alacritty
 RUN sudo add-apt-repository ppa:aslatter/ppa
 RUN sudo apt-get install -y alacritty
+
+#Install PeaZip
+RUN wget https://github.com/peazip/PeaZip/releases/download/7.9.0/peazip_7.9.0.LINUX.x86_64.GTK2.deb
+RUN sudo gdebi -n peazip_7.9.0.LINUX.x86_64.GTK2.deb
+RUN sudo rm -f peazip_7.9.0.LINUX.x86_64.GTK2.deb

@@ -25,7 +25,12 @@ RUN sudo apt-get update -y && sudo apt-get install -y palemoon
 RUN sudo add-apt-repository ppa:aslatter/ppa
 RUN sudo apt-get install -y alacritty
 
-#Install PeaZip
+#Install PeaZip (https://peazip.github.io/)
 RUN wget https://github.com/peazip/PeaZip/releases/download/7.9.0/peazip_7.9.0.LINUX.x86_64.GTK2.deb
 RUN sudo gdebi -n peazip_7.9.0.LINUX.x86_64.GTK2.deb
 RUN sudo rm -f peazip_7.9.0.LINUX.x86_64.GTK2.deb
+
+#Install AnyDesk (anydesk.com)
+RUN wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
+RUN sudo echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
+RUN sudo apt-get update && sudo apt-get install -y anydesk

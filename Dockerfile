@@ -5,7 +5,8 @@ RUN sudo mv /etc/apt/sources.list /etc/apt/sources.list.old
 COPY sources.list /etc/apt/sources.list
 
 #Removing build-in browsers
-RUN sudo dpkg --remove google-chrome-stable xarchiver && sudo apt-get -y autoremove
+RUN sudo dpkg --remove google-chrome-stable
+RUN sudo apt-get remove xarchiver && sudo apt-get -y autoremove
 
 #Updating and installing basic tools
 RUN sudo apt-get update -y && sudo apt-get upgrade -y

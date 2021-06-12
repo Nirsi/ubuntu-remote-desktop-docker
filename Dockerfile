@@ -26,9 +26,9 @@ RUN sudo add-apt-repository ppa:aslatter/ppa
 RUN sudo apt-get install -y alacritty
 
 #Install PeaZip (https://peazip.github.io/)
-RUN wget https://github.com/peazip/PeaZip/releases/download/7.9.0/peazip_7.9.0.LINUX.x86_64.GTK2.deb
-RUN sudo gdebi -n peazip_7.9.0.LINUX.x86_64.GTK2.deb
-RUN sudo rm -f peazip_7.9.0.LINUX.x86_64.GTK2.deb
+RUN wget https://github.com/peazip/PeaZip/releases/download/8.0.0/peazip_8.0.0.LINUX.x86_64.GTK2.deb
+RUN sudo gdebi -n peazip_8.0.0.LINUX.x86_64.GTK2.deb
+RUN sudo rm -f peazip_8.0.0.LINUX.x86_64.GTK2.deb
 
 #Install AnyDesk (anydesk.com)
 RUN wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -

@@ -14,7 +14,7 @@ RUN sudo apt-get install -y software-properties-common apt-transport-https build
 #Install VSCode
 RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 RUN sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-RUN sudo apt-get update -y && sudo apt-get install -y code=1.56.2-1620838498
+RUN sudo apt-get update -y && sudo apt-get install -y code
 
 #Install Pale Moon browser (https://www.palemoon.org/)
 RUN sudo echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser.list

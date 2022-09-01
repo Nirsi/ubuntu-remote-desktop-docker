@@ -7,6 +7,9 @@ COPY sources.list /etc/apt/sources.list
 #Removing build-in browsers
 RUN sudo dpkg --remove google-chrome-stable && sudo apt-get -y autoremove
 
+#Update GPG keys
+RUN sudo apt-get update -y --allow-unauthenticated && sudo apt-get install -y --allow-unauthenticated cumulus-archive-keyring
+
 #Updating and installing basic tools
 RUN sudo apt-get update -y && sudo apt-get upgrade -y
 RUN sudo apt-get install -y software-properties-common apt-transport-https build-essential gdebi-core unzip wget curl htop ncdu zip atop vim ssh git 
